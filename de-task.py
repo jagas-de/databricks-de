@@ -175,7 +175,7 @@ try:
     """
         spark.sql(merge_query)
     else:
-        output_df.write.mode("overwrite").saveAsTable(
+        output_df.write.mode("append").saveAsTable(
             "asgmnt_test_catlg.gold.coil_summary"
         )
 except exception as e:
